@@ -1,8 +1,8 @@
 const gameboard = {
     matrix: [
-        [1, 2, 3], 
-        [4, 5, 6], 
-        [7, 8, 9]
+        [0, 0, 0], 
+        [0, 0, 0], 
+        [0, 0, 0]
     ]
 }
 
@@ -14,16 +14,35 @@ function getPlayers(playerOne, playerTwo){
 }
 
 if (
-    (gameboard.matrix[0][0] === gameboard.matrix[0][1] && gameboard.matrix[0][1] === gameboard.matrix[0][2]) ||
-    (gameboard.matrix[1][0] === gameboard.matrix[1][1] && gameboard.matrix[1][1] === gameboard.matrix[1][2]) ||
-    (gameboard.matrix[2][0] === gameboard.matrix[2][1] && gameboard.matrix[2][1] === gameboard.matrix[2][2]) ||
-    (gameboard.matrix[0][0] === gameboard.matrix[1][0] && gameboard.matrix[1][0] === gameboard.matrix[2][0]) ||
-    (gameboard.matrix[0][1] === gameboard.matrix[1][1] && gameboard.matrix[1][1] === gameboard.matrix[2][1]) ||
-    (gameboard.matrix[0][2] === gameboard.matrix[1][2] && gameboard.matrix[1][2] === gameboard.matrix[2][2]) ||
-    (gameboard.matrix[0][0] === gameboard.matrix[1][1] && gameboard.matrix[1][1] === gameboard.matrix[2][2]) ||
-    (gameboard.matrix[0][2] === gameboard.matrix[1][1] && gameboard.matrix[1][1] === gameboard.matrix[2][0])
+    // Rows
+    ((gameboard.matrix[0][0] === 1) && (gameboard.matrix[0][1] === 1) && (gameboard.matrix[0][2] === 1)) ||
+    ((gameboard.matrix[1][0] === 1) && (gameboard.matrix[1][1] === 1) && (gameboard.matrix[1][2] === 1)) ||
+    ((gameboard.matrix[2][0] === 1) && (gameboard.matrix[2][1] === 1) && (gameboard.matrix[2][2] === 1)) ||
+    // Columns
+    ((gameboard.matrix[0][0] === 1) && (gameboard.matrix[1][0] === 1) && (gameboard.matrix[2][0] === 1)) ||
+    ((gameboard.matrix[0][1] === 1) && (gameboard.matrix[1][1] === 1) && (gameboard.matrix[2][1] === 1)) ||
+    ((gameboard.matrix[0][2] === 1) && (gameboard.matrix[1][2] === 1) && (gameboard.matrix[2][2] === 1)) ||
+    // Diagonals
+    ((gameboard.matrix[0][0] === 1) && (gameboard.matrix[1][1] === 1) && (gameboard.matrix[2][2] === 1)) ||
+    ((gameboard.matrix[0][2] === 1) && (gameboard.matrix[1][1] === 1) && (gameboard.matrix[2][0] === 1))
 ) {
-    console.log("Win condition met");
+    console.log("Win X condition met");
+}
+
+if (
+    // Rows
+    ((gameboard.matrix[0][0] === 2) && (gameboard.matrix[0][1] === 2) && (gameboard.matrix[0][2] === 2)) ||
+    ((gameboard.matrix[1][0] === 2) && (gameboard.matrix[1][1] === 2) && (gameboard.matrix[1][2] === 2)) ||
+    ((gameboard.matrix[2][0] === 2) && (gameboard.matrix[2][1] === 2) && (gameboard.matrix[2][2] === 2)) ||
+    // Columns
+    ((gameboard.matrix[0][0] === 2) && (gameboard.matrix[1][0] === 2) && (gameboard.matrix[2][0] === 2)) ||
+    ((gameboard.matrix[0][1] === 2) && (gameboard.matrix[1][1] === 2) && (gameboard.matrix[2][1] === 2)) ||
+    ((gameboard.matrix[0][2] === 2) && (gameboard.matrix[1][2] === 2) && (gameboard.matrix[2][2] === 2)) ||
+    // Diagonals
+    ((gameboard.matrix[0][0] === 2) && (gameboard.matrix[1][1] === 2) && (gameboard.matrix[2][2] === 2)) ||
+    ((gameboard.matrix[0][2] === 2) && (gameboard.matrix[1][1] === 2) && (gameboard.matrix[2][0] === 2))
+) {
+    console.log("Win O condition met");
 }
 
 
