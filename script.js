@@ -38,12 +38,10 @@ const gameBoard = (() => {
     }
 })()
 
-
 const createPlayer = (playerName, mark) => ({
     playerName,
     mark
 });
-
 
 const gameLogic = (() => {
     let players = [];
@@ -72,15 +70,18 @@ const gameLogic = (() => {
         if (gameBoard.getMatrix()[index] != "")
             return;
         gameBoard.update(index, players[currentPlayerIndex].mark);
-
+        
         if (checkForWin(gameBoard.getMatrix(), players[currentPlayerIndex].mark)){
             gameOver = true;
-            displayController.renderMessage(`${players[currentPlayerIndex].playerName} wins!`)
+            if(players[currentPlayerIndex].playerName === ""){
+                displayController.renderMessage(`${players[currentPlayerIndex].mark} wins!`)
+            } else { 
+                displayController.renderMessage(`${players[currentPlayerIndex].playerName} wins!`)
+            }
         } else if (checkForTie(gameBoard.getMatrix())){
             gameOver = true;
             displayController.renderMessage("It's a tie!");
         }
-
         currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
     }
 
@@ -134,7 +135,7 @@ restartButton.addEventListener("click", () => {
     gameLogic.restart();
 });
 
-
-
-
-
+//This loads the gameboard at pageload
+window.addEventListener('DOMContentLoaded', () => {
+    gameLogic.startGame();
+});
