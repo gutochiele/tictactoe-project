@@ -17,9 +17,13 @@
     text-align: center;
 }
 
-#cellContainer{
+#gameboard{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
+}
+
+#players{
+    margin: 25px;
 }
