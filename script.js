@@ -70,7 +70,7 @@ const gameLogic = (() => {
         if (gameBoard.getMatrix()[index] != "")
             return;
         gameBoard.update(index, players[currentPlayerIndex].mark);
-        
+
         if (checkForWin(gameBoard.getMatrix(), players[currentPlayerIndex].mark)){
             gameOver = true;
             if(players[currentPlayerIndex].playerName === ""){
