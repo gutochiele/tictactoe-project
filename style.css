@@ -1,3 +1,9 @@
+body{
+    background-color: #262626;
+    color: #f0f8ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #container{
     display: flex;
     flex-direction: column;
@@ -5,6 +11,7 @@
 }
 
 .cell{
+    color: #f0f8ff;
     width: 100px;
     height: 100px;
     border: 2px solid;
@@ -15,6 +22,7 @@
     display: flex;
     justify-content: center;
 }
+
 #gameContainer{
     text-align: center;
 }
