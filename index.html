@@ -10,16 +10,18 @@
 <body>
     <div id="container">
         <h1>Tic Tac Toe</h1>
-        <div id="players">
-            <label for="playerOne">Player One:</label>
-            <input type="text" name="playerOne" id="playerOne">
-            <label for="playerTwo">Player Two:</label>
-            <input type="text" name="playerTwo" id="playerTwo">
+        <div id="header">
+            <div id="players">
+                <label for="playerOne">Player One:</label>
+                <input type="text" name="playerOne" id="playerOne">
+                <label for="playerTwo">Player Two:</label>
+                <input type="text" name="playerTwo" id="playerTwo">
+            </div>
+            <button id="startBtn">Start Game</button>
+            <button id="restartBtn">Restart</button>
         </div>
             <div id="gameboard"></div>
-            <h2 id="statusText"></h2>
-            <button id="startBtn">Start</button>
-            <button id="restartBtn">Restart</button>
+            <h2 id="message"></h2>
         </div>
     </div>
     <script src="script.js"></script>
